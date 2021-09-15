@@ -37,7 +37,7 @@ while True:
 
 
 ### Evidence
-<vid src="evidence/hello_video.mov" alt="video of rainbow blinking" height="300">
+<img src="evidence/hello_circuitpython_gif" alt="video of rainbow blinking" height="300">
 
 ### Wiring
 Only the board required!
