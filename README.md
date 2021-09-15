@@ -37,7 +37,7 @@ while True:
 
 
 ### Evidence
-![Video of blinking](/evidence/hello_video.mov)
+<vid src="evidence/hello_video.mov" alt="video of rainbow blinking" height="300">
 
 ### Wiring
 Only the board required!
@@ -73,6 +73,6 @@ while True:
 
 
 ### Wiring
-![Servo Wiring diagram](/evidence/servo_wiring.png)
+<img src="evidence/servo_wiring.PNG" alt="servo wiring diagram" height="300">
 
 ### Reflection
