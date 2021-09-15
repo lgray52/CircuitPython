@@ -37,7 +37,7 @@ while True:
 
 
 ### Evidence
-Pictures / Gifs
+![Video of blinking](/images/hello_video.mov)
 
 ### Wiring
 Only the board required!
@@ -73,6 +73,6 @@ while True:
 
 
 ### Wiring
-
+![Servo Wiring diagram](/images/servo_wiring.png)
 
 ### Reflection
