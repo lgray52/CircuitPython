@@ -50,13 +50,15 @@ This was a fairly basic assignment. I changed the assignment a little bit,to mak
 
 ### Description & Code
 
+Make a servo turn
+
 ```python
 import board
 import time
 import pwmio
 from adafruit_motor import servo
 
-pwm = pwmio.PWMOut(board.A1, duty_cycle=2 ** 15, frequency=50)
+pwm = pwmio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)
 
 myServo = servo.Servo(pwm)
 
@@ -76,3 +78,4 @@ while True:
 <img src="evidence/servo_wiring.PNG" alt="servo wiring diagram" height="300">
 
 ### Reflection
+This assignment introduced ranges, which essentially circle a value in a specific range by a certain number, and expanded on CircuitPython syntax by introducing the key usage of servos.
