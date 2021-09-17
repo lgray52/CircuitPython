@@ -72,7 +72,7 @@ while True:
 ```
 
 ### Evidence
-
+![servo spinning](https://github.com/lgray52/CircuitPython/blob/main/evidence/servo.gif)
 
 ### Wiring
 <img src="evidence/servo_wiring.PNG" alt="servo wiring diagram" height="300">
