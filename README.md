@@ -5,6 +5,7 @@ CircuitPython course module work
 ## Table of Contents
 * [Hello_CircuitPython](#Hello_CircuitPython)
 * [CircuitPython_Servo](#CircuitPython_Servo)
+* [CircuitPython Distance Sensor](#CircuitPython_Distance_Sensor)
 
 ## Hello_CircuitPython
 
@@ -78,4 +79,23 @@ while True:
 <img src="evidence/servo_wiring.PNG" alt="servo wiring diagram" height="300">
 
 ### Reflection
-This assignment introduced ranges, which essentially circle a value in a specific range by a certain number, and expanded on CircuitPython syntax by introducing the key usage of servos.
+This assignment introduced ranges, which essentially circle a value in a specific range by a certain number, and expanded on CircuitPython syntax by introducing the key usage of servos, a small rotating motor.
+
+
+## CircuitPython_Distance_Sensor
+
+### Description & Code
+This assignment uses the distance produced by an HC SR04, a type of ultrasonic distance sensor, to change the colour of an LED on board the Metro Express based on the distance. The closer to the sensor, the colour shifts to red, and the further away, the colour shifts to green. 
+
+```python
+Code goes here
+```
+
+### Evidence
+![alt](link to github page for gif)
+
+### Wiring
+<img src="evidence/" alt="HC SR04 wiring" height="300">
+
+### Reflection
+This assignment introduced the usage of an HC SR04 distance sensor to perform various functions with CircuitPython. 
