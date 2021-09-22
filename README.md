@@ -88,14 +88,46 @@ This assignment introduced ranges, which essentially circle a value in a specifi
 This assignment uses the distance produced by an HC SR04, a type of ultrasonic distance sensor, to change the colour of an LED on board the Metro Express based on the distance. The closer to the sensor, the colour shifts to red, and the further away, the colour shifts to green. 
 
 ```python
-Code goes here
+# Lucy Gray, 17.09.21, Distance Sensor
+
+import board
+import time
+import neopixel
+import adafruit_hcsr04
+
+led = neopixel.NeoPixel(board.NEOPIXEL, 1)
+led.brightness = 0.2
+
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D5, echo_pin=board.D6)
+
+while True:
+    try:
+        dist = sonar.distance
+        print((dist))
+        if dist < 5:
+            led.fill((255, 0, 0))
+        if dist > 35:
+            led.fill((0, 255, 0))
+        if dist > 5 and dist < 20:
+            r = (255 - ((dist-5)*(255/15)))
+            b = 0
+            g = (0 + ((dist-5)*(255/15)))
+            led.fill((int(r), int(b), int(g)))
+        if dist > 20 and dist < 35:
+            r = 0
+            b = (0 + ((dist-20)*(255/15)))
+            g = (255 - ((dist-20)*(255/15)))
+            led.fill((int(r), int(b), int(g)))
+    except RuntimeError:
+        print("Retrying!")
+    time.sleep(0.1)
 ```
 
 ### Evidence
-![alt](link to github page for gif)
+![gif of colour change w/ distance sensor](https://github.com/lgray52/CircuitPython/blob/main/evidence/distance_sensor.gif)
 
 ### Wiring
-<img src="evidence/" alt="HC SR04 wiring" height="300">
+<img src="evidence/distance_sensor_wiring.PNG" alt="HC SR04 wiring" height="300">
 
 ### Reflection
 This assignment introduced the usage of an HC SR04 distance sensor to perform various functions with CircuitPython. 
