@@ -175,7 +175,7 @@ while True:
 ![gif of photoresistor counting](https://github.com/lgray52/CircuitPython/blob/main/evidence/photointerruptor.GIF)
 
 ### Wiring
-<img src="evidence/photointerruptor_wiring.PNG" alt="photointerruptor wiring" height="300">
+<img src="evidence/photointerruptor_wiring.png" alt="photointerruptor wiring" height="300">
 
 ### Reflection
 This assignment introduced a bunch of new functions. I used [this site](https://github.com/gventre04/CircuitPython) for guidance, and modified it to fit the assignment. 
