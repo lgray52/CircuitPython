@@ -6,6 +6,7 @@ CircuitPython course module work
 * [Hello_CircuitPython](#Hello_CircuitPython)
 * [CircuitPython_Servo](#CircuitPython_Servo)
 * [CircuitPython Distance Sensor](#CircuitPython_Distance_Sensor)
+* [CircuitPython Photointerruptor](#CircuitPython_Photointerruptor)
 
 ## Hello_CircuitPython
 
@@ -171,10 +172,10 @@ while True:
 ```
 
 ### Evidence
-![alt](link to github page for gif)
+![gif of photoresistor counting](https://github.com/lgray52/CircuitPython/blob/main/evidence/photointerruptor.GIF)
 
 ### Wiring
-<img src="evidence/" alt="" height="300">
+<img src="evidence/photointerruptor_wiring.PNG" alt="photointerruptor wiring" height="300">
 
 ### Reflection
 This assignment introduced a bunch of new functions. I used [this site](https://github.com/gventre04/CircuitPython) for guidance, and modified it to fit the assignment. 
