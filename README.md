@@ -131,3 +131,50 @@ while True:
 
 ### Reflection
 This assignment introduced the usage of an HC SR04 distance sensor to perform various functions with CircuitPython. 
+
+
+## CircuitPython_Photointerruptor
+
+### Description & Code
+Using the digitalio library to use the pin connection as a resistor in order to detect a change in the state of the pin connecting it to the photointerrupter, this code is used to tell when a photointerrupter is interupted and count how many times this happens. By using the digitalio library, the pin is held at logic voltage, a high state, and switches to a low state when the photointerruptor is intrrupted. The counter is printed to the serial monitor every 4 seconds using time.monotonic().
+
+```python
+# photoresistor, L.G. 24.09.21
+
+import time
+import digitalio
+import board
+
+initial = time.monotonic()
+
+resistorPin = digitalio.DigitalInOut(board.D7) 
+resistorPin.direction = digitalio.Direction.INPUT
+resistorPin.pull = digitalio.Pull.UP
+# define resistor pin for photointerruptor - uses board as resistor
+
+counter = 0  # counts # of times photointerruptor interrupted
+
+val = False  # store value of resistorPin
+state = False  # store state (LOW/HIGH) of resistorPin
+
+while True:
+    val = resistorPin.value
+    if val and not state:
+        counter += 1  # add one to counter when state change detected
+    state = val
+
+    now = time.monotonic()
+    if now - initial >= 4:
+        print("I have been interrupted", str(counter), "times")
+        initial = now
+    time.sleep(0.1)
+```
+
+### Evidence
+![alt](link to github page for gif)
+
+### Wiring
+<img src="evidence/" alt="" height="300">
+
+### Reflection
+This assignment introduced a bunch of new functions. I used [this site](https://github.com/gventre04/CircuitPython) for guidance, and modified it to fit the assignment. 
