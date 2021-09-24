@@ -6,7 +6,7 @@ CircuitPython course module work
 * [Hello_CircuitPython](#Hello_CircuitPython)
 * [CircuitPython_Servo](#CircuitPython_Servo)
 * [CircuitPython Distance Sensor](#CircuitPython_Distance_Sensor)
-* [CircuitPython Photointerruptor](#CircuitPython_Photointerruptor)
+* [CircuitPython Photointerrupter](#CircuitPython_Photointerrupter)
 
 ## Hello_CircuitPython
 
@@ -134,13 +134,13 @@ while True:
 This assignment introduced the usage of an HC SR04 distance sensor to perform various functions with CircuitPython. 
 
 
-## CircuitPython_Photointerruptor
+## CircuitPython_Photointerrupter
 
 ### Description & Code
-Using the digitalio library to use the pin connection as a resistor in order to detect a change in the state of the pin connecting it to the photointerrupter, this code is used to tell when a photointerrupter is interupted and count how many times this happens. By using the digitalio library, the pin is held at logic voltage, a high state, and switches to a low state when the photointerruptor is intrrupted. The counter is printed to the serial monitor every 4 seconds using time.monotonic().
+Using the digitalio library to use the pin connection as a resistor in order to detect a change in the state of the pin connecting it to the photointerrupter, this code is used to tell when a photointerrupter is interupted and count how many times this happens. By using the digitalio library, the pin is held at logic voltage, a high state, and switches to a low state when the photointerrupter is intrrupted. The counter is printed to the serial monitor every 4 seconds using time.monotonic().
 
 ```python
-# photoresistor, L.G. 24.09.21
+# photointerrupter, L.G. 24.09.21
 
 import time
 import digitalio
@@ -175,7 +175,7 @@ while True:
 ![gif of photoresistor counting](https://github.com/lgray52/CircuitPython/blob/main/evidence/photointerruptor.GIF)
 
 ### Wiring
-<img src="evidence/photointerruptor_wiring.png" alt="photointerruptor wiring" height="300">
+<img src="evidence/photointerrupter_wiring.png" alt="photointerruptor wiring" height="300">
 
 ### Reflection
 This assignment introduced a bunch of new functions. I used [this site](https://github.com/gventre04/CircuitPython) for guidance, and modified it to fit the assignment. 
