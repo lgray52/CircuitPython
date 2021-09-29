@@ -18,12 +18,12 @@ import board
 import neopixel
 import time
 
-dot = neopixel.NeoPixel(board.NEOPIXEL, 1)
+dot = neopixel.NeoPixel(board.NEOPIXEL, 1)  # attach MetroExpress and led
 dot.brightness = 0.2
 
 print("make it rainbow!")
 
-while True:
+while True:  # makes the led change colours using colour codes 
     dot.fill((255, 0, 0))
     time.sleep(0.5)
     dot.fill((255, 128, 0))
@@ -60,15 +60,15 @@ import time
 import pwmio
 from adafruit_motor import servo
 
-pwm = pwmio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)
+pwm = pwmio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)  # set pwm pin
 
 myServo = servo.Servo(pwm)
 
 while True:
-    for angle in range(0, 180, 5):
+    for angle in range(0, 180, 5):  # range between 0 & 180, add 5
         myServo.angle = angle
         time.sleep(0.025)
-    for angle in range(180, 0, 5):
+    for angle in range(180, 0, 5): # other way (180 - 0)
         myServo.angle = angle
         time.sleep(0.025)
 ```
@@ -96,31 +96,31 @@ import time
 import neopixel
 import adafruit_hcsr04
 
-led = neopixel.NeoPixel(board.NEOPIXEL, 1)
+led = neopixel.NeoPixel(board.NEOPIXEL, 1)  # led
 led.brightness = 0.2
 
-sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D5, echo_pin=board.D6)
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D5, echo_pin=board.D6)  # attach distance sensor
 
 while True:
     try:
         dist = sonar.distance
         print((dist))
-        if dist < 5:
+        if dist < 5:  # if the distance is less than 5, light is red
             led.fill((255, 0, 0))
-        if dist > 35:
+        if dist > 35:  # if distance is greater than 35, light is green
             led.fill((0, 255, 0))
-        if dist > 5 and dist < 20:
+        if dist > 5 and dist < 20:  # from red to blue
             r = (255 - ((dist-5)*(255/15)))
             b = 0
             g = (0 + ((dist-5)*(255/15)))
             led.fill((int(r), int(b), int(g)))
-        if dist > 20 and dist < 35:
+        if dist > 20 and dist < 35:  # from blue to green
             r = 0
             b = (0 + ((dist-20)*(255/15)))
             g = (255 - ((dist-20)*(255/15)))
             led.fill((int(r), int(b), int(g)))
     except RuntimeError:
-        print("Retrying!")
+        print("Retrying!")  #error in HCSR04
     time.sleep(0.1)
 ```
 
@@ -146,7 +146,7 @@ import time
 import digitalio
 import board
 
-initial = time.monotonic()
+initial = time.monotonic()  #set initial time
 
 resistorPin = digitalio.DigitalInOut(board.D7) 
 resistorPin.direction = digitalio.Direction.INPUT
@@ -164,10 +164,10 @@ while True:
         counter += 1  # add one to counter when state change detected
     state = val
 
-    now = time.monotonic()
+    now = time.monotonic()  # sets current time
     if now - initial >= 4:
         print("I have been interrupted", str(counter), "times")
-        initial = now
+        initial = now  # resets initial to current (counting to 4 again)
     time.sleep(0.1)
 ```
 
