@@ -7,6 +7,7 @@ CircuitPython course module work
 * [CircuitPython_Servo](#CircuitPython_Servo)
 * [CircuitPython Distance Sensor](#CircuitPython_Distance_Sensor)
 * [CircuitPython Photointerrupter](#CircuitPython_Photointerrupter)
+* [CircuitPython LCD](#CircuitPython_LCD)
 
 ## Hello_CircuitPython
 
@@ -179,3 +180,62 @@ while True:
 
 ### Reflection
 This assignment introduced a bunch of new functions. I used [this site](https://github.com/gventre04/CircuitPython) for guidance, and modified it to fit the assignment. 
+
+## CircuitPython_LCD
+
+### Description & Code
+This assignment was to use an LCD screen to display the value of a counter, and use capacitive touch - where touching a wire is detected to perform a function - both to increase the counter and to reverse the direction the counter is counting in (using different wires), then print this information to the screen as well.
+
+```python
+# LCD, Lucy G 01.10.21
+
+import board
+from lcd.lcd import LCD  # weird lcd library thing
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+import time
+import touchio
+
+i2c = board.I2C()
+lcd = LCD(I2CPCF8574Interface(i2c, 0x3f), num_rows=2, num_cols=16)
+
+touch_A5 = touchio.TouchIn(board.A5)
+touch_A0 = touchio.TouchIn(board.A0)
+
+counter = 0  # set counter value to zero
+reverse=1 # reverse value
+
+lcd.print("on")
+while True:
+    if touch_A5.value:
+        counter+=reverse
+        lcd.set_cursor_pos(0,0)  # set the cursor to the first row, first column
+        if reverse==1:  # when reverse is pos (going up)
+            lcd.print("Up: ")
+        else:
+            lcd.print("Down: ")
+        lcd.print(str(counter))  # print the counter
+        lcd.print("   ")  # give it some space
+        while touch_A5.value:
+            time.sleep(.01)  # idk this is j's thing
+
+    if touch_A0.value:
+        reverse=-reverse  # negative (down)
+        while touch_A0.value:
+            time.sleep(.1)
+        lcd.clear()
+        if reverse==1:
+            lcd.print("Up: ")
+        else:
+            lcd.print("Down: ")
+        lcd.print(str(counter))
+```
+
+### Evidence
+![lcd counter screen, switching between counting up and down](https://github.com/lgray52/CircuitPython/blob/main/evidence/lcd.GIF)
+
+### Wiring
+<img src="evidence/lcd_wiring.PNG" alt="simplified LCD wiring" height="300">
+*note: the LCD should have more wiring, with the SDA and SCL pins connected to their equivalently named MetroExpress pins, but the backpack is not shown in Tinkercad. Additionally, there should be a pin in A0 and A5 for capacitive touch.*
+
+### Reflection
+For this assignment, I collaborated with Jay for some of the code, but essentially, the code adds value to the counter when a certain wire is touched, and when the reverse wire is touched, reverses the sign of the counter. I learned that lcd.clear() is fine but not great, and in order to solve the problem of it continuing to print, lcd.set_cursor_pos(0,0) is much better (this sets the cursor to the first row and column). 
