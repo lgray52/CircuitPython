@@ -2,7 +2,7 @@
 
 CircuitPython course module work
 
-## Table of Contents
+## Table_of_Contents
 * [Hello_CircuitPython](#Hello_CircuitPython)
 * [CircuitPython_Servo](#CircuitPython_Servo)
 * [CircuitPython Distance Sensor](#CircuitPython_Distance_Sensor)
@@ -48,6 +48,8 @@ Only the board required!
 ### Reflection
 This was a fairly basic assignment. I changed the assignment a little bit,to make the light shift between rainbow shades, using different colour codes for different colours.
 
+[Back to Table of Contents](#Table_of_Contents)
+
 
 ## CircuitPython_Servo
 
@@ -82,6 +84,8 @@ while True:
 
 ### Reflection
 This assignment introduced ranges, which essentially circle a value in a specific range by a certain number, and expanded on CircuitPython syntax by introducing the key usage of servos, a small rotating motor.
+
+[Back to Table of Contents](#Table_of_Contents)
 
 
 ## CircuitPython_Distance_Sensor
@@ -134,6 +138,8 @@ while True:
 ### Reflection
 This assignment introduced the usage of an HC SR04 distance sensor to perform various functions with CircuitPython. 
 
+[Back to Table of Contents](#Table_of_Contents)
+
 
 ## CircuitPython_Photointerrupter
 
@@ -180,6 +186,9 @@ while True:
 
 ### Reflection
 This assignment introduced a bunch of new functions. I used [this site](https://github.com/gventre04/CircuitPython) for guidance, and modified it to fit the assignment. 
+
+[Back to Table of Contents](#Table_of_Contents)
+
 
 ## CircuitPython_LCD
 
@@ -239,3 +248,5 @@ _note: the LCD should have more wiring, with the SDA and SCL pins connected to t
 
 ### Reflection
 For this assignment, I collaborated with Jay for some of the code, but essentially, the code adds value to the counter when a certain wire is touched, and when the reverse wire is touched, reverses the sign of the counter. I learned that lcd.clear() is fine but not great, and in order to solve the problem of it continuing to print, lcd.set_cursor_pos(0,0) is much better (this sets the cursor to the first row and column). 
+
+[Back to Table of Contents](#Table_of_Contents)
