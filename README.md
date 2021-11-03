@@ -12,7 +12,7 @@ CircuitPython course module work
 ## Hello_CircuitPython
 
 ### Description & Code
-The purpose of this assignment is to make an led built into a MetroExpress change colours using CircuitPython.
+The purpose of this assignment was to make an led built into a MetroExpress change colours. CircuitPython was used to communicate to the neopixel with the dot.fill command.
 
 ```python
 import board
@@ -25,17 +25,18 @@ dot.brightness = 0.2
 print("make it rainbow!")
 
 while True:  # makes the led change colours using colour codes 
-    dot.fill((255, 0, 0))
+    dot.fill((255, 0, 0))  # red
     time.sleep(0.5)
-    dot.fill((255, 128, 0))
+    dot.fill((255, 128, 0))  # orange
     time.sleep(0.5)
-    dot.fill((255, 255, 0))
+    dot.fill((255, 255, 0))  # yellow
     time.sleep(0.5)
-    dot.fill((0, 255, 0))
+    dot.fill((0, 255, 0))  # green
     time.sleep(0.5)
-    dot.fill((0, 0, 255))
+    dot.fill((0, 0, 255))  # blue
     time.sleep(0.5)
-    dot.fill((255, 0, 255))
+    dot.fill((255, 0, 255))  # purple
+    time.sleep(0.5)
 ```
 
 
@@ -55,7 +56,7 @@ This was a fairly basic assignment. I changed the assignment a little bit,to mak
 
 ### Description & Code
 
-Make a servo turn. Important usage of any board with application to physical projects.
+Make a servo turn. Using range functions to change the value of the angle of the servo horn.
 
 ```python
 import board
@@ -91,7 +92,7 @@ This assignment introduced the range function, which essentially circles a value
 ## CircuitPython_Distance_Sensor
 
 ### Description & Code
-This assignment uses the distance produced by an HC SR04, a type of ultrasonic distance sensor, to change the colour of an LED on board the Metro Express based on the distance. The closer to the sensor, the colour shifts to red, and the further away, the colour shifts to green. This application of a distance sensor could be used in a project.
+This assignment uses the distance produced by an HC SR04, a type of ultrasonic distance sensor, to change the colour of an LED on board the Metro Express based on the distance. The closer to the sensor, the colour shifts to red, and the further away, the colour shifts to green. Using if statements and algebra to create proper values.
 
 ```python
 # Lucy Gray, 17.09.21, Distance Sensor
@@ -144,7 +145,7 @@ This assignment introduced the usage of an HC SR04 distance sensor to perform va
 ## CircuitPython_Photointerrupter
 
 ### Description & Code
-This assignment introduced a bunch of new functions. I used [this site](https://github.com/gventre04/CircuitPython) for guidance, and modified it to fit the assignment.
+Use photoresistor to print interrupts to the serial monitor. This assignment introduced a bunch of new functions, including the digitalio library, string function, and various variables. I used [this site](https://github.com/gventre04/CircuitPython) for guidance, and modified it to fit the assignment.
 
 ```python
 # photointerrupter, L.G. 24.09.21
