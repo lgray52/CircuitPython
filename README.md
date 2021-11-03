@@ -47,7 +47,7 @@ while True:  # makes the led change colours using colour codes
 Only the board required!
 
 ### Reflection
-This was a fairly basic assignment. I changed the assignment a little bit,to make the light shift between rainbow shades, using different colour codes for different colours. This assignment demonstrated the basic capabilities of the MetroExpress, and particularly the concept of "importing" features and elements to use in the code - for example, if time is not imported in the code, functions using time can't be used since the idea of time is not defined to the board.
+This was a fairly basic assignment. I changed the assignment a little bit, to make the light shift between rainbow shades, using different colour codes for different colours. This assignment demonstrated the basic capabilities of the MetroExpress, and particularly the concept of "importing" features and elements to use in the code - for example, if time is not imported in the code, functions using time can't be used since the idea of time is not defined to the board.
 
 [Back to Table of Contents](#Table_of_Contents)
 
@@ -194,7 +194,7 @@ Using the digitalio library to use the pin connection as a resistor in order to 
 ## CircuitPython_LCD
 
 ### Description & Code
-This assignment was to use an LCD screen to display the value of a counter, and use capacitive touch - where touching a wire is detected to perform a function - both to increase the counter and to reverse the direction the counter is counting in (using different wires), then print this information to the screen as well. This itroduced the use of lcds to communicate information visually.
+This assignment was to use an LCD screen to display the value of a counter, and use capacitive touch - where touching a wire is detected to perform a function - both to increase the counter and to reverse the direction the counter is counting in (using different wires), then print this information to the screen as well. This itroduced the use of lcds to communicate information visually. The lcd library had to be imported (which took a couple steps) in order to be able to functionally use the lcd, and the touchio library was used for the capacitive touch section.
 
 ```python
 # LCD, Lucy G 01.10.21
